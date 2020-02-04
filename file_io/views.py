@@ -34,7 +34,8 @@ def experiment(request):
         intermediate_path = unzip_file(filename)
         pdf_file = make_pdf(intermediate_path)
         uploaded_file_url = fs.url(filename)
-        return render(request, 'upload.html', {
-            'uploaded_file_url': pdf_file
-        })
+        return render(request, "crispy_form.html", {"form": form, "form_title": "upload", "uploaded_file_url": pdf_file})
+        # return render(request, 'upload.html', {
+        #     'uploaded_file_url': pdf_file
+        # })
     return render(request, "crispy_form.html", {"form": form, "form_title": "upload"})
