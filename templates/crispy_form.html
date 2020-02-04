@@ -26,7 +26,6 @@
         <h1 class="text-primary mb-1">{{form_title}}</h1>
         <br>
         {% crispy form %}
-        {% endif %}
         {% if uploaded_file_url %}
             <p>File uploaded at: <a href="{{ uploaded_file_url }}">{{ uploaded_file_url }}</a></p>
         {% endif %}
