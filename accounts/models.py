@@ -18,7 +18,7 @@ class UserManager(BaseUserManager):
         full_name,
         **extra_fields
     ):
-        if not username:
+        if not email:
             raise ValueError("Users must have an email address")
         utc_now = utc.localize(datetime.utcnow())
         now = utc_now.astimezone(timezone("Asia/Dhaka"))
