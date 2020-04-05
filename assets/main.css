@@ -1,0 +1,57 @@
+body {
+    font-family: 'Rubik', sans-serif;
+}
+
+.asteriskField {
+    display: none;
+}
+
+:root {
+    --color-primary: #00CEFF;
+    --color-secondary: #2f4858;
+    --color-success: #02d561;
+    --color-warning: #fec107;
+    --color-danger: #f63575;
+    --color-info: #5b00f8;
+    --color-dark: #353a40;
+    --color-light: #f8f9fb;
+    --color-white: #ffffff;
+  }
+
+.callout {
+    border-left: 0.25em solid;
+    border-radius: .25rem;
+    background-color: var(--color-light);
+}
+
+.callout-primary {
+    border-color: var(--color-primary);
+}
+
+.callout-secondary {
+    border-color: var(--color-secondary);
+}
+
+.callout-success {
+    border-color: var(--color-success);
+}
+
+.callout-warning {
+    border-color: var(--color-warning);
+}
+
+.callout-danger {
+    border-color: var(--color-danger);
+}
+
+.callout-info {
+    border-color: var(--color-info);
+}
+
+.callout-dark {
+    border-color: var(--color-dark);
+}
+
+.callout-light {
+    border-color: var(--color-light);
+}

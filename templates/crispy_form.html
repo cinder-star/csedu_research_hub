@@ -3,11 +3,10 @@
 {% load crispy_forms_tags %}
 
 {% block title %}
-{{form_title}}
+{{form_title}} | EduSys
 {% endblock %}
 
 {% block style %}
-<link rel="stylesheet" href="{% static 'bg_image.css' %}" />
 <style>
     form .alert ul li {
         list-style: none;
@@ -22,13 +21,25 @@
 
 {% block content %}
 <div class="row h-100 justify-content-center align-items-center p-3">
-    <div class="col-md-5 m-3">
+    <div class="col-md-5">
         <h1 class="text-primary mb-1">{{form_title}}</h1>
         <br>
         {% crispy form %}
-        {% if uploaded_file_url %}
-            <p>File uploaded at: <a href="{{ uploaded_file_url }}">{{ uploaded_file_url }}</a></p>
+        {% if form_title == "Login" %}
+        <h5>Don't have an account? <a href="{% url 'register' %}">Register</a></h5>
+        {% elif form_title == "Register" %}
+        <h5>Already have an account? <a href="{% url 'login' %}">Login</a></h4>
+        {% endif %}
+        {% if user.is_authenticated %}
+        <a href="{{return_link|default:'/dashboard/'}}" class="btn btn-lg btn-outline-dark btn-block">
+            {{return_text|default:'Go back to Dashboard'}}
+        </a>
         {% endif %}
     </div>
+    {% if bg_image %}
+    <div class="col-md-5 mx-3">
+        <img src="{% static bg_image %}" style="width: 80vmin; height: auto;">
+    </div>
+    {% endif %}
 </div>
 {% endblock %}

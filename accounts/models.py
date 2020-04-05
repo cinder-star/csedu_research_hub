@@ -74,9 +74,9 @@ class User(AbstractBaseUser, PermissionsMixin):
     other = models.Manager()
 
     def __str__(self):
-        return "username: {}\nemail: {}\n".format(
-            self.username, self.email
+        return "email: {}\n".format(
+            self.email
         )
 
-    def get_username(self):
-        return self.username
+    def get_email(self):
+        return self.email
