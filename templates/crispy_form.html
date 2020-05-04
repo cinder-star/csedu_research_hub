@@ -28,7 +28,7 @@
         {% if form_title == "Login" %}
         <h5>Don't have an account? <a href="{% url 'register' %}">Register</a></h5>
         {% elif form_title == "Register" %}
-        <h5>Already have an account? <a href="{% url 'login' %}">Login</a></h4>
+        <h5>Already have an account? <a href="{% url 'log_in' %}">Login</a></h4>
         {% endif %}
         {% if user.is_authenticated %}
         <a href="{{return_link|default:'/dashboard/'}}" class="btn btn-lg btn-outline-dark btn-block">

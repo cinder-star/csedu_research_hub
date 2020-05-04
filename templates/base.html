@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{% block title %} EduSys {% endblock %} </title>
+    <title>{% block title %} CseDU Research Hub {% endblock %} </title>
     <link rel="stylesheet" href="{% static 'custom.css'%}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -26,7 +26,7 @@
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-white px-6 shadow-sm">
-        <a class="navbar-brand mx-1" href="/"><strong>EduSys</strong></a>
+        <a class="navbar-brand mx-1" href="/"><strong>CseDU Research Hub</strong></a>
         <button class="navbar-toggler border-0 text-dark" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" role="img"
@@ -38,38 +38,8 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="nav navbar-nav mr-auto">
-                {% block navbar-left-content %}
-                {% if user.is_authenticated %}
-                <li class="nav-item {% if navtab == 'dashboard' %} active {% endif %}">
-                    <a class="nav-link" href="#">Dashboard<span class="sr-only">(current)</span></a>
-                </li>
-                {% if user.role >= 3 %}
-                <li class="nav-item {% if navtab == 'teachers' %} active {% endif %}">
-                    <a class="nav-link" href="#">Teachers<span class="sr-only">Teachers</span></a>
-                </li>
-                {% endif %}
-                {% if user.role >= 2 %}
-                <li class="nav-item {% if navtab == 'classrooms' %} active {% endif %}">
-                    <a class="nav-link" href="#">Classes<span class="sr-only">Classes</span></a>
-                </li>
-                <li class="nav-item {% if navtab == 'students' %} active {% endif %}">
-                    <a class="nav-link" href="#">Students<span class="sr-only">Students</span></a>
-                </li>
-                {% endif %}
-                {% else %}
-                <li class="nav-item">
-                    <a class="nav-link" href="#"> Student</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#"> Teacher</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#"> School Admin</a>
-                </li>
-                {% endif %}
-                {% endblock %}
-            </ul>
+            <div class="nav navbar-nav mr-auto">
+            </div>
             <ul class="nav navbar-nav navbar-right mx-1">
                 &nbsp;
 
@@ -102,15 +72,6 @@
                     </div>
                 </li>
                 {% else %}
-                <li class="nav-item">
-                    <a class="nav-link" href="#">How to use</a>
-                </li>
-                <li class="nav-item {% if navtab == 'pricing' %} active {% endif %}">
-                    <a class="nav-link" href="#">Pricing</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="https://www.axionesl.com" target="_blank" rel="noopener noreferrer">Contact</a>
-                </li>
                 <div class="btn-group mx-2" role="group">
                     <a href="/accounts/register/" class="btn btn-primary"> <i class="fas fa-user-plus"></i>
                         Register</a>
@@ -129,18 +90,9 @@
                 <div class="row pt-5 pb-3">
                     <div class="col mx-3">
                         <strong>
-                            <a href="https://axionesl.com" class="text-secondary" target="_blank" rel="noopener noreferrer">Axion ES</a>
+                            <a href="https://axionesl.com" class="text-secondary" target="_blank" rel="noopener noreferrer">CseDU</a>
                         </strong>
                         <small class="d-block mb-3 text-muted">&copy; 2020</small>
-                    </div>
-                    <div class="col mx-3">
-                        <a href="#" class="text-muted">Terms & Conditions</a>
-                    </div>
-                    <div class="col mx-3">
-                        <a href="#" class="text-muted">Privacy Policy</a>
-                    </div>
-                    <div class="col mx-3">
-                        <a href="#" class="text-muted">EULA</a>
                     </div>
                 </div>
             </div>
